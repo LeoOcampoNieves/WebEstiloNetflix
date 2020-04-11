@@ -1,0 +1,126 @@
+:root {
+    --blanco: #fff;
+    --fondo: #141414;
+    --gris: #aaa;
+    --rojo: #E50914;
+}
+
+/* Reinicio los estilos del navegador */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    padding: 30px 0;
+}
+
+header nav a {
+    color: var(--gris);
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+header nav a:hover,
+header nav a.activo {
+    color: var(--blanco);
+}
+
+header .contenedor {
+    /* Con esto, el logo queda a la izquierda y el menú a la derecha */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logotipo {
+    color: var(--rojo);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.contenedor {
+    margin: auto;
+    width: 90%;
+}
+
+/* ---- ----- ----- Película principal ---- ----- ----- */
+.pelicula-principal {
+    align-items: flex-end;
+    color: var(--blanco);
+    background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0, 0, 0, .50) 100%), url(../images/backdrop.jpg);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 3.12em;
+    min-height: 40.62em; /* 650/16 = 40.62 - esto equivale a 650px, los 16 son del font-size */  
+}
+
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+    font-size: 3.12em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    margin-bottom:  1.25em;
+    max-width: 50%;
+}
+
+.pelicula-principal .boton {
+    background: rgba(0,0,0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    color: var(--blanco);
+    cursor: pointer;
+    font-size:  1.12em;
+    padding: 0.93em 1.87em;
+    margin-right: 1.25em;
+    transition: .3s ease all;
+}
+
+.pelicula-principal .boton:hover {
+    background: var(--blanco);
+    color: var(--fondo)
+}
+
+.pelicula-principal .boton i {
+    margin-right: 1.25em;
+}
+
+/* ---- ----- ----- Media Queries ---- ----- ----- */
+@media screen and (max-width: 800px) {
+    header .logotipo {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    header .contenedor {
+        flex-direction: column;
+        text-align:center;
+    }
+
+    .pelicula-principal {
+        font-size: 14px;
+    }
+
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+}
